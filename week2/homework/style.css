@@ -2,23 +2,19 @@ header {
     background-color: rgb(90, 55, 40);
     color: rgb(255, 240, 245);
     text-align: center;
-    padding: 10px;
-}
-
-h1, h2, h3, p, li {
-    font-family: "Open Sans", Arial, sans-serif;
-}
-
-h2, h3 {
-    color: rgb(90, 55, 40);
-}
-
-p, li {
-    color: rgb(90, 55, 40);
 }
 
 img {
     max-width: 100%;
+}
+
+p, li {
+    color: rgb(90, 55, 40);
+    font-family: "Open Sans", Arial, sans-serif;
+}
+
+header p {
+    color: inherit;
 }
 
 @media (min-width: 320px){
@@ -31,10 +27,6 @@ img {
         margin: 0px auto;
         text-align: center;
     }
-
-    li {
-        list-style-position: inside;
-    }
 }
 
 @media (min-width: 768px){
@@ -44,14 +36,7 @@ img {
 
     header {
         color: rgb(225, 245, 230);
-        text-align: left;
-        padding: 10px 40px;
-    }
-
-    h1, h2, h3 {
         font-family: "Oswald", Arial, sans-serif;
-        text-transform: uppercase;
-        letter-spacing: 3px;
     }
 
     main {
@@ -71,10 +56,9 @@ img {
 
     .intro-text {
         order: 2;
-        font-style: italic;
     }
 
-    .ingredients ul {
+    ul {
         columns: 2;
     }
 }
@@ -82,57 +66,37 @@ img {
 @media (min-width: 1060px){
     body {
         background-color: rgb(90, 55, 40);
+        color: rgb(240, 194, 237);
     }
 
     header {
         background-color: rgb(240, 194, 237);
         color: rgb(90, 55, 40);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    h1 {
-        font-size: 60px;
-        font-weight: 700;
-        letter-spacing: 1px;
     }
 
     main {
         width: 960px;
     }
 
-    .intro {
-        align-items: center;
-    }
-
     .intro-text {
         order: 1;
-        font-style: normal;
-        font-size: 22px;
+        font-size: 20px;
     }
 
     .intro img {
         order: 2;
-        width: 35%;
     }
 
     .recipe {
         display: flex;
-        gap: 60px;
+        gap: 40px;
     }
 
-    .ingredients ul {
+    ul {
         columns: 1;
     }
 
     p, li {
         color: rgb(255, 240, 245);
-        font-size: 18px;
-        font-weight: 300;
-    }
-
-    h2, h3 {
-        color: rgb(240, 194, 237);
     }
 }
