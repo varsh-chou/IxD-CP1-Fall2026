@@ -2,13 +2,14 @@ header {
     background-color: rgb(90, 55, 40);
     color: rgb(255, 240, 245);
     text-align: center;
+    font-family: "Open Sans", Arial, sans-serif;
 }
 
 img {
     max-width: 100%;
 }
 
-h3 {
+h2, h3 {
     color: rgb(90, 55, 40);
 }
 
@@ -36,7 +37,7 @@ p, li {
 
     header {
         color: rgb(225, 245, 230);
-        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-family: "Oswald", Arial, sans-serif;
     }
 
     main {
@@ -66,12 +67,12 @@ p, li {
 @media (min-width: 1060px){
     body {
         background-color: rgb(90, 55, 40);
-        color: rgb(240, 194, 237);
     }
 
     header {
         background-color: rgb(240, 194, 237);
         color: rgb(90, 55, 40);
+        font-family: Georgia, 'Times New Roman', Times, serif;
     }
 
     main {
@@ -96,7 +97,7 @@ p, li {
         columns: 1;
     }
 
-    h3 {
+    h2, h3 {
         color: rgb(240, 194, 237);
     }
 
