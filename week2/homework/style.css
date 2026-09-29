@@ -1,0 +1,77 @@
+body {
+    background-color: rgb(255, 240, 245);
+}
+
+header {
+    background-color: rgb(240, 194, 237);
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+}
+
+p, li {
+    color: rgb(90, 55, 40);
+    font-family: "Open Sans", Arial, sans-serif;
+}
+
+.intro, .details, .recipe {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 744px){
+    body {
+        background-color: rgb(225, 245, 230);
+    }
+
+    header {
+        background-color: rgb(170, 220, 185);
+        font-family: "Oswald", Arial, sans-serif;
+    }
+
+    .intro, .details {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .intro img {
+        width: 45%;
+    }
+
+    p, li {
+        color: darkgreen;
+    }
+}
+
+@media (min-width: 1060px){
+    body {
+        background-color: rgb(90, 55, 40);
+        color: white;
+    }
+
+    header {
+        background-color: rgb(240, 194, 237);
+        color: rgb(90, 55, 40);
+    }
+
+    main {
+        width: 960px;
+        margin: 0px auto;
+    }
+
+    .intro {
+        flex-direction: row-reverse;
+    }
+
+    .recipe {
+        flex-direction: row;
+        gap: 40px;
+    }
+
+    p, li {
+        color: rgb(255, 240, 245);
+        font-size: 18px;
+    }
+}
