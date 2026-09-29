@@ -8,13 +8,13 @@ img {
     max-width: 100%;
 }
 
+h3 {
+    color: rgb(90, 55, 40);
+}
+
 p, li {
     color: rgb(90, 55, 40);
     font-family: "Open Sans", Arial, sans-serif;
-}
-
-header p {
-    color: inherit;
 }
 
 @media (min-width: 320px){
@@ -36,7 +36,7 @@ header p {
 
     header {
         color: rgb(225, 245, 230);
-        font-family: "Oswald", Arial, sans-serif;
+        font-family: Georgia, 'Times New Roman', Times, serif;
     }
 
     main {
@@ -94,6 +94,10 @@ header p {
 
     ul {
         columns: 1;
+    }
+
+    h3 {
+        color: rgb(240, 194, 237);
     }
 
     p, li {
