@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Waymo Seatback Screen</title>
+<style>
+  body { max-width: 760px; margin: 40px auto; padding: 0 20px; font-family: Helvetica, Arial, sans-serif; line-height: 1.6; color: #222; background: #fff; }
+  img, video { width: 100%; display: block; margin: 12px 0 32px; }
+  .old { color: #727272; }
+</style>
+</head>
+<body>
+
+<h1>Waymo seatback screen</h1>
+<p>Part of my Waymo Connect project. I'm designing the screen on the back of the front seat in a Waymo, the one the passenger looks at during the ride. The goal is to help riders trust the car by showing what it sees and what it will do next.</p>
+
+<h2>What I'm making</h2>
+<p>Instead of modeling a full car interior, I focused only on what the passenger sees from the back seat: the two front seats, the screens on their backs, and just enough of the cabin around them so it reads as a car.</p>
+<p>The screen will show a 3D map of the street around the car, with the other cars, pedestrians and the route. That map is the interface I'm designing.</p>
+
+<div class="old">
+<h2>Part 1: The cabin</h2>
+
+<h3>Step 1: Blocking out one seat</h3>
+<p>I started with a single seat made from cubes: a base, a cushion, the seatback and a headrest on two thin posts. I added a Bevel modifier and Shade Smooth to round off the edges, then tilted the seatback back so it sits like a real car seat.</p>
+<img src="car_interior_1.png" alt="Single seat blocked out with rounded cubes">
+
+<h3>Step 2: Seatback shell and screen</h3>
+<p>I added side bolsters and a hard shell on the back of the seat, which is where the screen mounts. The screen is a thin beveled frame with a flat plane inside it for the display. I parented the screen to the seat so it leans with the seatback.</p>
+<img src="car_interior_2.png" alt="Seat with a back shell and a screen">
+
+<h3>Step 3: Second seat and center console</h3>
+<p>I duplicated the seat, with the screen coming along, and moved it over for the driver side. Between them I added a center console with an armrest on top.</p>
+<img src="car_interior_3.png" alt="Two seats with screens and a center console between them">
+
+<h3>Step 4: Building the cabin around the seats</h3>
+<p>I added just enough of the car to give the screens context: the floor, roof, door panels with armrests, window frames, pillars and the dashboard. I made the parts overlap slightly so there are no small gaps or seams where they meet.</p>
+<img src="car_interior_4.png" alt="Cabin walls, door panel and roof around the seats">
+
+<h3>Step 5: Setting up the camera</h3>
+<p>I placed the camera where a passenger's eyes would be, behind the right seat, looking at the screen. Every render is from the rider's point of view.</p>
+<img src="car_interior_5.png" alt="Full cabin in the viewport with the camera visible">
+
+<h3>Step 6: First render</h3>
+<p>Here's how it's looking so far. The screens are blank for now. Next I'll build the 3D map that goes on them.</p>
+<img src="car_interior_render.png" alt="Rendered rear cabin from the passenger's point of view">
+
+</div>
+
+<h2>Part 2: The 3D map</h2>
+<p>The 3D map is what plays on the seatback screen. It shows the rider what the car sees and what it will do next.</p>
+
+<h3>The scenario: waiting on a green light</h3>
+<p>I animated one scenario. The Waymo's light turns green, but it stays stopped because a car on the cross street is about to run its red. In that moment a rider would wonder why the car isn't going, so the map shows exactly what the car sees and why it's waiting.</p>
+
+<h3>Step 1: Laying out the city</h3>
+<p>I started with a ground plane and simple boxes for buildings, lined up along two streets that cross. The buildings have different heights so it reads as a city, but no detail, so they don't compete with the street.</p>
+<img src="images/waymo__greenlt_1.png">
+
+<h3>Step 2: Roads, crosswalks and cars</h3>
+<p>I added the roads as flat strips, then lane lines, crosswalks and sidewalks. The cars are two stacked rounded boxes. The Waymo uses the same shape with a sensor dome on the roof so it's easy to spot.</p>
+<img src="images/waymo__greenlt_2.png">
+
+<h3>Step 3: Colors</h3>
+<p>I kept the colors close to a map: white buildings, gray roads, white and yellow markings, and a soft see-through gray for the other cars. The Waymo is the only solid white car, and the blue line is its route.</p>
+<img src="images/waymo__greenlt_3.png">
+
+<h3>Step 4: Traffic lights and the stop</h3>
+<p>I added a traffic light for each direction: green for the Waymo, red for the cross street. Then I keyframed the Waymo driving up and stopping at the line even though its light is green. The cars in its lane stop with it.</p>
+<img src="images/waymo__greenlt_4.png" alt="Waymo stopped at the intersection with a green light">
+
+<h3>Step 5: The car running its red</h3>
+<p>A car on the cross street speeds through its red light. I keyframed its color so it turns orange while it's a risk, which shows the rider exactly why the Waymo is waiting, then fades back to gray once it's gone.</p>
+<img src="images/waymo__greenlt_5.png">
+
+<h3>Step 6: All clear</h3>
+<p>Once the intersection is clear, the Waymo pulls through along the blue route line, and the waiting traffic goes with it.</p>
+<img src="images/waymo__greenlt_6.png">
+
+<h3>The animation</h3>
+<p>The final animation with the screen messages on top: "Car running its red light" while it waits, then "All clear" when it goes.</p>
+<video src="images/"></video>
+
+<h3>Adding the map to the seatback screen</h3>
+<p>I rendered a frame of the map, added the screen interface on top (arrival time, route status and a message explaining why the car is waiting), and used it as an image texture on the display in my cabin model. This is how it looks from the back seat.</p>
+<img src="map_on_screen_cabin.png">
+<img src="map_on_screen_closeup.png">
+
+</body>
+</html>
