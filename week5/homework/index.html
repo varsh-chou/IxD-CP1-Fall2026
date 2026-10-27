@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Waymo Seatback Screen</title>
+<style>
+  body { max-width: 760px; margin: 40px auto; padding: 0 20px; font-family: Helvetica, Arial, sans-serif; line-height: 1.6; color: #222; background: #fff; }
+  img { width: 100%; display: block; margin: 12px 0 32px; }
+</style>
+</head>
+<body>
+
+<h1>Waymo seatback screen</h1>
+<p>Part of my Waymo Connect project. I'm designing the screen on the back of the front seat in a Waymo, the one the passenger looks at during the ride. The goal is to help riders trust the car by showing what it sees and what it will do next.</p>
+
+<h2>What I'm making</h2>
+<p>Instead of modeling a full car interior, I focused only on what the passenger sees from the back seat: the two front seats, the screens on their backs, and just enough of the cabin around them so it reads as a car.</p>
+<p>The screen will show a 3D map of the street around the car, with the other cars, pedestrians and the route. That map is the interface I'm designing.</p>
+
+<h2>Process</h2>
+
+<h3>Step 1: Blocking out one seat</h3>
+<p>I started with a single seat made from cubes: a base, a cushion, the seatback and a headrest on two thin posts. I added a Bevel modifier and Shade Smooth to round off the edges, then tilted the seatback back so it sits like a real car seat.</p>
+<img src="images/01-seat-blockout.png" alt="Single seat blocked out with rounded cubes">
+
+<h3>Step 2: Seatback shell and screen</h3>
+<p>I added side bolsters and a hard shell on the back of the seat, which is where the screen mounts. The screen is a thin beveled frame with a flat plane inside it for the display. I parented the screen to the seat so it leans with the seatback.</p>
+<img src="images/02-seatback-screen.png" alt="Seat with a back shell and a screen">
+
+<h3>Step 3: Second seat and center console</h3>
+<p>I duplicated the seat, with the screen coming along, and moved it over for the driver side. Between them I added a center console with an armrest on top.</p>
+<img src="images/03-two-seats-console.png" alt="Two seats with screens and a center console between them">
+
+<h3>Step 4: Building the cabin around the seats</h3>
+<p>I added just enough of the car to give the screens context: the floor, roof, door panels with armrests, window frames, pillars and the dashboard. I made the parts overlap slightly so there are no small gaps or seams where they meet.</p>
+<img src="images/04-cabin-walls.png" alt="Cabin walls, door panel and roof around the seats">
+
+<h3>Step 5: Setting up the camera</h3>
+<p>I placed the camera where a passenger's eyes would be, behind the right seat, looking at the screen. Every render is from the rider's point of view.</p>
+<img src="images/05-full-cabin-lights.png" alt="Full cabin in the viewport with the camera visible">
+
+<h3>Step 6: First render</h3>
+<p>Here's how it's looking so far. The screens are blank for now. The next step is putting the 3D map on them.</p>
+<img src="images/06-first-render.png" alt="Rendered rear cabin from the passenger's point of view">
+
+<h2>Next steps</h2>
+<ul>
+  <li>Model the 3D map for the seatback screen: streets, crosswalks, simple model cars, pedestrians, the Waymo itself and the route line.</li>
+  <li>Put the map on the screen. Render the map scene and use it as an image texture on the display plane so it glows like a real screen.</li>
+  <li>Play around with animations on the map.</li>
+</ul>
+
+<p>Varshini Chouthri</p>
+
+</body>
+</html>
