@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ocean Waves</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; background: #f5f7fa; color: #1d2433; line-height: 1.6; }
+        main { max-width: 820px; margin: 0 auto; padding: 24px; }
+        h2 { margin-top: 40px; }
+        iframe { width: 800px; max-width: 100%; aspect-ratio: 4 / 3; border: none; }
+        code { background: #e6ebf2; padding: 1px 5px; border-radius: 4px; }
+        li { margin-bottom: 16px; }
+        img { max-width: 100%; margin-top: 8px; }
+    </style>
+</head>
+<body>
+<main>
+
+    <h1>Ocean Waves</h1>
+    <iframe src="sketch.html" title="Ocean Waves sketch"></iframe>
+    <p>A grid of circles that moves like ocean waves. The rows get darker toward the bottom, like deeper water. The wave starts in the middle and moves out to both sides.</p>
+
+    <h2>Problems and Solutions</h2>
+    <ol>
+        <li><strong>I couldn't get the wave to move properly.</strong><br>
+            I couldn't picture what the wave should look like, so I tried a few versions. Along the way I ran into two smaller problems:
+            <ol type="a">
+                <li><strong>All the circles moved together like one block.</strong><br>
+                    Solution: I added <code>j*0.5</code> inside <code>sin()</code> so each row moves a little later.<br>
+                    <img src="circles-before.png" width="400" alt="Before: all circles moving together">
+                </li>
+                <li><strong>The left and right sides didn't match.</strong><br>
+                    Solution: I used <code>abs(i - 7.5)</code> so the wave starts from the middle.<br>
+                    <img src="circles-after.png" width="400" alt="After: wave starting from the middle">
+                </li>
+            </ol>
+        </li>
+    </ol>
+
+    <h2>Most Interesting Problem: Getting the Wave to Move Properly</h2>
+    <p>My hardest problem was getting the wave to move the way I wanted. I knew I wanted ocean waves, but I couldn't picture how the circles should move. Should they all bounce together, move left to right, or start from the middle? I couldn't tell until I saw it.</p>
+    <p>So I tried different versions and fixed one thing at a time. First all the circles moved together, which didn't look like a wave. Adding <code>j*0.5</code> made the rows move one after another. Then the two sides didn't match, so I used <code>abs(i - 7.5)</code> to start the wave from the middle. That looked the best, so I kept it. I learned that trying things out is easier than guessing in my head.</p>
+
+</main>
+</body>
+</html>
