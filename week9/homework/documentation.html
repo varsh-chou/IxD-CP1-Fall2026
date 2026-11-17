@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Solar System Documentation</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; background: #f5f7fa; color: #1d2433; line-height: 1.6; }
+        main { max-width: 820px; margin: 0 auto; padding: 24px; }
+        h2 { margin-top: 40px; }
+        iframe { width: 800px; max-width: 100%; aspect-ratio: 4 / 3; border: none; }
+        code { background: #e6ebf2; padding: 1px 5px; border-radius: 4px; }
+        img { max-width: 100%; width: 600px; display: block; margin-top: 8px; }
+        .step { margin-bottom: 40px; }
+    </style>
+</head>
+<body>
+<main>
+
+    <h1>Solar System</h1>
+    <iframe src="index.html" title="Solar System sketch"></iframe>
+    <p>A planet goes around the sun, a moon goes around the planet, and a shooting star flies across the screen every 3 seconds.</p>
+
+    <h2>How It Evolved</h2>
+
+    <div class="step">
+        <h3>1. The sun</h3>
+        <p>I started with one orange circle in the center of the screen as the sun.</p>
+        <img src="images/1-sun.png" alt="Orange sun in the center">
+    </div>
+
+    <div class="step">
+        <h3>2. The planet orbits</h3>
+        <p>I added a planet and used <code>cos()</code> and <code>sin()</code> with <code>millis()</code> to move it in a circle around the sun. This is the repeated motion.</p>
+        <img src="images/2-planet.png" alt="Blue planet orbiting the sun">
+    </div>
+
+    <div class="step">
+        <h3>3. The moon</h3>
+        <p>I added a moon that orbits the planet 4 times faster. Because the speeds are different, the two motions are out of sync, which makes the movement more interesting.</p>
+        <img src="images/3-moon.png" alt="Moon orbiting the planet">
+    </div>
+
+    <div class="step">
+        <h3>4. The shooting star</h3>
+        <p>I added a small white circle that moves to the right by adding 10 to its x position every frame.</p>
+        <img src="images/4-shooting-star.png" alt="Shooting star moving across the screen">
+    </div>
+
+    <div class="step">
+        <h3>5. A new star every 3 seconds</h3>
+        <p>The star flew off the screen and never came back, so I used <code>setInterval()</code> to send it back to the left every 3 seconds. Each time it comes back at a random height using <code>random()</code>.</p>
+        <img src="images/5-random-height.png" alt="Shooting star at a different height">
+    </div>
+
+    <div class="step">
+        <h3>6. Changing colors</h3>
+        <p>I used a second <code>setInterval()</code> to give the planet a random HSB color every 2 seconds. Since this is 2 seconds and the star is 3 seconds, they don't happen at the same time.</p>
+        <img src="images/6-colors.png" alt="Planet in a new color">
+    </div>
+
+</main>
+</body>
+</html>
